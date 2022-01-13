@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#block {
+  width: 100px;
+  border-radius: 100px;
+  aspect-ratio: 1;
+  background-color: tomato;
+  position: relative;
+}
+
+#block::before,
+#block::after {
+  --scale: 0;
+  --translate-y: 0;
+  --arrow-size: 10px;
+  --tooltip-color: #333;
+
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0))
+    scale(var(--scale));
+  transition: 300ms transform;
+  transform-origin: bottom center;
+}
+
+#block::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+  content: attr(data-tooltip);
+  width: max-content;
+  max-width: 100%;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: var(--tooltip-color);
+}
+
+#block::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+  content: "";
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+#block:hover::before,
+#block:hover::after {
+  --scale: 1;
+}
