@@ -1,0 +1,28 @@
+html {
+  /* firefox start */
+  scrollbar-width: normal;
+  scrollbar-color: red green;
+  /* firefox end */
+}
+
+/* chrome start */
+html::-webkit-scrollbar {
+  width: 2vw;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: greenyellow;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: lawngreen;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: lightcoral;
+}
+
+html::-webkit-scrollbar-track:hover {
+  background-color: hotpink;
+}
+/* chrome end */
