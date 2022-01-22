@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+  display: flex;
+}
+
+.checkbox-container input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-container label::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border: 0.05em solid black;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type="checkbox"]:hover + label::before {
+  background-color: hsl(301, 20%, 90%);
+}
+
+.checkbox-container input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 20px black;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label::before {
+  content: "\002714";
+  background-color: hsl(301, 20%, 70%);
+}
