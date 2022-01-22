@@ -1,0 +1,90 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./background_image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: hsla(201, 100%, 6%, 0.6);
+  padding: 50px 30px;
+  min-width: 400px;
+  width: 50%;
+  max-width: 600px;
+}
+
+.login-container .login-title {
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: normal;
+}
+
+.login-container .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.login-container .input-group label {
+  color: white;
+  font-weight: lighter;
+  font-size: 1.5em;
+  margin-bottom: 7px;
+}
+
+.login-container .input-group input {
+  all: initial;
+  background-color: hsla(201, 100%, 91%, 0.3);
+  font-size: 1.5em;
+  padding: 0.1em 0.25em;
+  border: 1px solid hsl(201, 100%, 6%);
+  border-radius: 5px;
+  color: white;
+  font-weight: lighter;
+  font-family: inherit;
+}
+
+.login-container .input-group input:focus {
+  border: 1px solid hsl(201, 100%, 50%);
+}
+
+.login-container .login-btn {
+  all: initial;
+  padding: 10px 30px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: hsla(201, 100%, 50%, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid hsl(201, 100%, 50%);
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: white;
+  font-family: inherit;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.login-container .login-btn:hover,
+.login-container .login-btn:focus {
+  background-color: hsla(201, 100%, 50%, 0.3);
+}
