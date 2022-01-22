@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #eee;
+  perspective: 800px;
+  font-family: sans-serif;
+}
+
+.btn {
+  --main-color: #069;
+  --flip-color: white;
+  position: relative;
+  height: 150px;
+  width: 450px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 300ms ease-in-out;
+  transform: translateZ(-75px);
+}
+
+.btn:hover {
+  transform: rotateX(-90deg) translateY(75px);
+}
+
+.btn .btn-side {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.btn .btn-side.btn-default-side {
+  background-color: var(--flip-color);
+  border: 10px solid var(--main-color);
+  color: var(--main-color);
+  transform: translateZ(75px);
+}
+
+.btn .btn-side.btn-hover-side {
+  background-color: var(--main-color);
+  color: var(--flip-color);
+  transform: rotateX(90deg) translateZ(75px);
+}
